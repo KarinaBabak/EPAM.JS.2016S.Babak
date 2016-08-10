@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() { //handler works immediately after loading the document
 
     for(var i = 0; i < data.length; i++){ //passing on the array
         var outputString; //string contains the value of element
