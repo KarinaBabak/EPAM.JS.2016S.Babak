@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    margin: 0 auto;
+}
+
+.picture {
+    width: 230px;
+    height: 230px;
+    margin: 30px 30px 25px 30px;
+    position: absolute;
+}
+
+.right-picture {
+   right: 10px;
+}
+
+#right-bottom-img {
+    position: absolute;
+    bottom: 20px;
+    right:10px;
+
+}
+
+#left-bottom-img {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+}
+
+.health {
+    width: 14%;
+    right: 43%;
+    top: 15px;
+    position: absolute;
+    text-align: center;
+}
+
+#imgLife {
+    margin: 0 2%;
+    width: 25%;
+}
+
+#image-food {
+    width: 20%;
+    height: 30%;
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    text-align: center;
+}
+
+#image-food img {
+    display: none;
+}
+
+.score-text {
+    right: 34%;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+
+
+@media all and (min-width: 750px) {
+    body {
+        min-width: 450px;
+        max-height:540px;
+    }
+
+    .picture {
+        min-width: 190px;
+        min-height:190px;
+    }
+
+}
