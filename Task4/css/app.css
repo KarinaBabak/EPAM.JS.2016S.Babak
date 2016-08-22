@@ -38,9 +38,9 @@ body {
     display: inline-block;
     border: 1px solid #eee;
     padding: 5px 10px;
-    margin-bottom: 5px;
     cursor: pointer;
     text-align: center;
+    margin:0 10px 5px 0;
 }
 
 .button#btnGenerate {

@@ -4,6 +4,7 @@ function Zombie() {
     this.offset = 1;
     this.speed = 10;
     this.position = 0;
+    this.minSpeed = 8;
     this.$image;
 }
 
@@ -24,14 +25,26 @@ Zombie.prototype.move = function(speedMoving) {
         that.position += that.offset;
         that.$image.css('right', that.position + 'px');
 
-        if (that.position >= width) {
+        if (that.position >= width ) {
             that.die();
             $gameOver.show();
             $lines.empty();
             clearInterval(moving);
         }
 
-    }, speedMoving);
+    }, _speed);
+};
+
+Zombie.prototype.slowMove = function () {
+    var i=10;
+    var that = this;
+    var slowSeconds = setInterval(function () {
+        that.move(that.minSpeed);
+        if (i == 1) {
+            clearInterval(slowSeconds);
+        }
+        i--;
+    }, 1000);
 };
 
 Zombie.prototype.die = function() {
