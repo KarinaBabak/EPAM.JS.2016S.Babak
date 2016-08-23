@@ -2,7 +2,7 @@ function StrongZombie() {
     Zombie.apply(this, arguments);
     this.name = "strong";
     this.health = 70;
-    this.minSpeed = 3;
+    this.minOffset = 0.2;
 };
 
 StrongZombie.prototype = Object.create(Zombie.prototype);
