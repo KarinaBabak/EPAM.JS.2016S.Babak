@@ -13,8 +13,8 @@ function Zombie() {
 Zombie.prototype.create = function (line) {
     this.$imgZombie = $("<div class='zombie " + this.name + "'></div>");
 	this.$health = $("<div class='health'></div>");
-    this.$health.append("<div class ='health-progress'>100%</div>");
-    this.$currentHealthProgress = this.$health.find('.health-progress');
+    this.$currentHealthProgress = $("<div class ='health-progress'>100%</div>");
+    this.$health.append(this.$currentHealthProgress);
     this.$imgZombie.append(this.$health);
     $lines.eq(line).append(this.$imgZombie); //add zombie on screen
 	width = $('#field').width() - this.$imgZombie.width();
@@ -58,5 +58,8 @@ Zombie.prototype.crashHealth = function (value) {
     this.$currentHealthProgress.width(changedHealth + "%");
     this.$currentHealthProgress.text(changedHealth + "%");
     this.currentHealth -= value;
+    if(this.currentHealth <= 0) {
+        this.die();
+    }
 }
 

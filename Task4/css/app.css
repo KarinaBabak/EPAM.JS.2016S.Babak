@@ -74,10 +74,10 @@ body {
 }
 
 .health-progress {
-	width:100%;
-	background: red;	
-	text-align: center;
-	font-size:12px;
+    width: 100%;
+    background: red;
+    text-align: center;
+    font-size: 12px;
 }
 
 
