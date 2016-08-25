@@ -7,14 +7,16 @@ function Zombie() {
     this.currentHealth = this.health;
     this.$imgZombie;
     this.$health;
+    this.$healthValue;
     this.$currentHealthProgress;
 }
 
 Zombie.prototype.create = function (line) {
     this.$imgZombie = $("<div class='zombie " + this.name + "'></div>");
-	this.$health = $("<div class='health'></div>");
-    this.$currentHealthProgress = $("<div class ='health-progress'>100%</div>");
-    this.$health.append(this.$currentHealthProgress);
+	this.$health = $("<div class='health'><span>100%</span></div>");
+    this.$healthValue = this.$health.find("span");
+    this.$currentHealthProgress = $("<div class ='health-progress'></div>");
+    this.$health.prepend(this.$currentHealthProgress);
     this.$imgZombie.append(this.$health);
     $lines.eq(line).append(this.$imgZombie); //add zombie on screen
 	width = $('#field').width() - this.$imgZombie.width();
@@ -56,7 +58,7 @@ Zombie.prototype.crashHealth = function (value) {
     var currentPercent = Math.round(100*this.currentHealth/this.health);
     var changedHealth = currentPercent - subtractValue;
     this.$currentHealthProgress.width(changedHealth + "%");
-    this.$currentHealthProgress.text(changedHealth + "%");
+    this.$healthValue.text(changedHealth + "%");
     this.currentHealth -= value;
     if(this.currentHealth <= 0) {
         this.die();
