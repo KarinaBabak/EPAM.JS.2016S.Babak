@@ -66,3 +66,18 @@ body {
     background-image: url(../img/strong.gif);
     background-size: cover;
 }
+
+.health {
+	width:50px;		
+	background: gray;	
+	margin: -4px 0 0 0;
+}
+
+.health-progress {
+	width:100%;
+	background: red;	
+	text-align: center;
+	font-size:12px;
+}
+
+

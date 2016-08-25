@@ -1,11 +1,14 @@
 $(function () {
 	game.settings();
-    $('#btnGenerate').click(game.generate);		
-	
-	$('#btnSlowUp').click(function() {
-		game.slowMove();
-	});
 
+	$generateBtn = $('#btnGenerate');
+	$generateBtn.click(game.generate);
+	
+	$('#btnSlowUp').click(game.slowMove);
+	
+	$('#btnGrowOld').click(game.growOld);
+
+	$('#btnExplode').click(game.explodeZombies);
 });
 
 game = {	
@@ -47,9 +50,32 @@ game = {
 		}
 	},
 
+	growOld: function () {
+		var i=10;
+		var intervalCrashHealth = setInterval(function(){
+			for(var element in zombiesArray) {
+				zombiesArray[element].crashHealth(1);
+			}
+			i--;
+
+			if (i == 0) {
+				clearInterval(intervalCrashHealth);
+			}
+
+		}, 1000);
+	},
+
+	explodeZombies: function() {
+		for(var element in zombiesArray) {
+			zombiesArray[element].crashHealth(15);
+		}
+	},
+
 	gameOver: function() {
 		$gameOver.show();
-		$('#btnGenerate').attr('disabled',true);
+		$generateBtn.attr('disabled',true);
+		$generateBtn.css({"cursor" : "default"});
+
 	}
 	
 };

@@ -1,7 +1,6 @@
 function StrongZombie() {
     Zombie.apply(this, arguments);
-    this.name = "strong";
-    this.health = 70;
+    this.name = "strong";    
     this.minOffset = 0.2;
 };
 
