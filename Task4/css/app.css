@@ -47,10 +47,15 @@ body {
     background-color: #ff9800;
 }
 
+#btnPause {
+    width: 62px;
+}
+
 .zombie {
     position: absolute;
     top: 0;
     right: 0;
+    z-index:1;
 }
 
 .zombie.michael {
@@ -67,13 +72,22 @@ body {
     background-size: cover;
 }
 
+.plant {
+    width: 78px;
+    height: 69px;	
+    background-image: url(../img/bonkbonk.png);
+    background-size: cover;
+    position: relative;
+    z-index:0;
+}
+
 .health {
 	width:100%;
 	background: gray;	
 	margin: -4px 0 0 0;
     z-index: 0;
     text-align: center;
-    height: 20px;
+    height: 17px;
 }
 
 .health span {
@@ -86,7 +100,7 @@ body {
 .health-progress {
     width: 100%;
     background: #c60000;
-    height: 20px;
+    height: 17px;
     position: absolute;
     z-index: 1;
 }
